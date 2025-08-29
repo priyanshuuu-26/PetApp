@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./backend/check_"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
