@@ -1,103 +1,87 @@
-Pet App - Full-Stack Flutter & FastAPI
-A minimal full-stack application featuring a Flutter mobile front-end and a Python FastAPI back-end for managing user pets.
+# 🐾 Pet App - Full-Stack Flutter & FastAPI
 
-About The Project
-This project is a complete, self-contained feature that demonstrates the integration of a mobile application with a REST API. It includes user authentication, token-based session management, and CRUD (Create, Read) operations for pet data.
+A minimal **full-stack application** featuring a **Flutter mobile front-end** and a **Python FastAPI back-end** for managing user pets.
 
-Tech Stack:
+---
 
-Mobile: Flutter with GetX for state management and navigation.
+## 📖 About The Project
 
-Back-end: FastAPI with Python.
+This project demonstrates how to integrate a modern **mobile application** with a **REST API** back-end.  
+It includes user authentication, token-based session management, and CRUD (Create & Read) operations for pet data.  
 
-Database: MongoDB.
+The codebase follows a **clean architecture**, separating front-end and back-end into their own directories.
 
-Authentication: JWT (JSON Web Tokens).
+---
 
-Features
-User Authentication: Secure user registration and login.
+## 🛠 Tech Stack
 
-Session Persistence: JWT token is stored on the device for a persistent login session.
+- **Mobile:** Flutter with GetX (state management & navigation)  
+- **Back-end:** FastAPI (Python)  
+- **Database:** MongoDB  
+- **Authentication:** JWT (JSON Web Tokens)  
 
-Pet Management: Authenticated users can add their pets and view a list of pets they've added.
+---
 
-Clean Architecture: The project is separated into /backend and /mobile directories for clear separation of concerns.
+## ✨ Features
 
-Screenshots
-Login Screen
+- 🔐 **User Authentication** – Secure registration & login with JWT  
+- 🔄 **Session Persistence** – JWT stored on device for persistent login  
+- 🐶 **Pet Management** – Authenticated users can add and view their pets  
+- 🏗 **Clean Architecture** – `/backend` and `/mobile` directories for clear separation of concerns  
 
-Pet List
+---
 
-Add Pet Form
+## 🚀 Getting Started
 
-[Insert your login screen screenshot here]
+To get a local copy up and running, follow these steps:
 
-[Insert your pet list screenshot here]
+### ✅ Prerequisites
 
-[Insert your add pet form screenshot here]
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.35.2 or compatible)  
+- [Python](https://www.python.org/downloads/) (v3.9+)  
+- [MongoDB](https://www.mongodb.com/try/download/community) installed & running locally  
 
-Getting Started
-To get a local copy up and running, follow these simple steps.
+---
 
-Prerequisites
-Flutter SDK installed (Version 3.35.2 or compatible).
+## ⚙️ How to Run the Project
 
-Python installed (Version 3.9+).
+Run these commands step by step in **two terminals**:  
+one for the **backend** and one for the **frontend**.
 
-MongoDB installed and running on your local machine.
+```bash
+##################################
+# 1️⃣ Start the Back-end (FastAPI)
+##################################
 
-How to Run the Project
-You will need to run two components in separate terminals: the back-end server and the mobile app.
-
-1. Back-end (FastAPI)
-First, get the server running.
-
-Navigate to the back-end directory:
-
+# Navigate to backend folder
 cd backend
 
-Create and activate a Python virtual environment:
-
-# Create the virtual environment
+# Create virtual environment
 python -m venv venv
 
-# Activate it (Windows)
+# Activate virtual environment
+# On Windows:
 .\venv\Scripts\activate
-
-# Activate it (macOS/Linux)
+# On macOS/Linux:
 source venv/bin/activate
 
-Install the required packages:
-
+# Install dependencies
 pip install -r requirements.txt
 
-Run the server:
-
+# Run the server
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-The API will now be running at http://localhost:8000. You can see the auto-generated documentation at http://localhost:8000/docs.
+# API will be available at:
+# http://localhost:8000
 
-2. Mobile App (Flutter)
-Now, run the mobile application.
 
-Navigate to the mobile directory:
+##################################
+# 2️⃣ Start the Front-end (Flutter)
+##################################
 
-cd mobile
 
-Get the Flutter packages:
-
+# Get Flutter dependencies
 flutter pub get
 
-IMPORTANT: Update the API URL:
-Open the file /mobile/lib/app/data/providers/api_provider.dart. Find the _baseUrl variable and change the IP address to your computer's local network IP.
-
-// For the Android Emulator, 10.0.2.2 usually works.
-// For a physical device, find your PC's IP with `ipconfig` (Windows) or `ifconfig` (macOS).
-final String _baseUrl = "[http://10.0.2.2:8000](http://10.0.2.2:8000)";
-
-Run the app:
-Make sure an emulator is running or a physical device is connected, then run:
-
+# Run the Flutter app
 flutter run
-
-Your app should now be running and fully connected to your local back-end. 🚀
